@@ -4,7 +4,8 @@
   "description": "A simple chat application made with the MERN stack.",
   "main": "express.js",
   "scripts": {
-    "server": "nodemon express.js"
+    "server": "nodemon express.js",
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix client\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/DennisOnder/chat-app#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.3",
