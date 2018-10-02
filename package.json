@@ -1,0 +1,28 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "A simple chat application made with the MERN stack.",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DennisOnder/chat-app.git"
+  },
+  "author": "Dennis Onder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DennisOnder/chat-app/issues"
+  },
+  "homepage": "https://github.com/DennisOnder/chat-app#readme",
+  "dependencies": {
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1",
+    "validator": "^10.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
