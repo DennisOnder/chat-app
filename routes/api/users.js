@@ -4,6 +4,9 @@ const bcrypt = require('bcryptjs');
 const Validator = require('validator');
 const mongoose = require('mongoose');
 const User = require('../../models/User');
+const jwt = require('jsonwebtoken');
+const passport = require('passport');
+const secret = require('../../config/keys').secretOrKey;
 
 // @route  POST api/users/register
 // @desc   Register a new user
@@ -71,10 +74,13 @@ router.post('/login', (req, res) => {
           .then(isMatched => {
             if(isMatched) {
               const payload = {
+                id: user.id,
                 username: user.username,
                 isLoggedIn: true
               };
-              res.json(payload);
+              jwt.sign(payload, secret, { expiresIn: 3600000 }, (err, token) => {
+                res.json({ success: true, token: 'Bearer ' + token });
+              });
             } else {
               return res.status(400).json({ password: 'Invalid Password' }); 
             }
@@ -82,6 +88,16 @@ router.post('/login', (req, res) => {
         }
     })
   }
-})
+});
+
+// @route  GET api/users/current
+// @desc   Return current user
+// @access Private
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+  res.json({
+    id: req.user.id,
+    username: req.user.username
+  });
+});
 
 module.exports = router;
