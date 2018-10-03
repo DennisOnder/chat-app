@@ -23,7 +23,7 @@ router.post('/register', (req, res) => {
     errors.password = 'Password Must Be Between 6 And 16 Characters Long.';
   }
   if(errors.username || errors.password) {
-    res.status(400).json(errors);
+    return res.status(400).json(errors);
   } else {
     User.findOne({ username: req.body.username })
     .then(user => {
@@ -50,5 +50,38 @@ router.post('/register', (req, res) => {
     })
   }
 });
+
+router.post('/login', (req, res) => {
+  let errors = {};
+  if(Validator.isEmpty(req.body.username)) {
+    errors.username = 'Username Field Is Required.';
+  }
+  if(Validator.isEmpty(req.body.password)) {
+    errors.password = 'Password Field Is Required.';
+  }
+  if(errors.username || errors.password) {
+    return res.status(400).json(errors);
+  } else {
+    User.findOne({ username: req.body.username })
+    .then(user => {
+      if(!user) {
+        return res.status(404).json({user: 'User not found.'})
+      } else {
+        bcrypt.compare(req.body.password, user.password)
+          .then(isMatched => {
+            if(isMatched) {
+              const payload = {
+                username: user.username,
+                isLoggedIn: true
+              };
+              res.json(payload);
+            } else {
+              return res.status(400).json({ password: 'Invalid Password' }); 
+            }
+          })
+        }
+    })
+  }
+})
 
 module.exports = router;
