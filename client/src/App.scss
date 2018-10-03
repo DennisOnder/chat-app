@@ -1,0 +1,77 @@
+// Variables
+$black: #001011;
+$gray: #14213D;
+$yellow: #FCA311;
+$light-gray: #E5E5E5;
+$white: #FFFFFF;
+
+// Main Styles
+#Wrapper {
+  width: 100% !important;
+  height: 100vh !important;
+}
+
+#Title {
+  margin-top: 10%;
+  color: $yellow;
+  text-align: center;
+}
+
+#AuthenticationButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  .authBtn {
+    color: $white;
+    background: $yellow;
+    padding: 1em 2em;
+    outline: 0;
+    border: 0;
+    margin: 0 10px;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+// Spinner
+.lds-ring {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  overflow: hidden;
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid $yellow;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $yellow transparent transparent transparent;
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    &::nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
