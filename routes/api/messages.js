@@ -9,7 +9,7 @@ const Message = require('../../models/Message');
 // @route  GET api/messages
 // @desc   Get all messages
 // @access Public
-router.get('/', passport.authenticate('jwt', { session: false }),(req, res) => {
+router.get('/', (req, res) => {
   Message.find()
     .sort({ date: -1 })
     .limit(15)

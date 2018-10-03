@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import setAuthToken from '../../utils/setAuthToken';
 
 class Login extends Component {
 
@@ -26,8 +27,8 @@ class Login extends Component {
     };
     axios.post('/api/users/login', user)
       .then(res => {
-        localStorage.setItem('jwtToken', res.data.token);
-        console.log(localStorage.jwtToken);
+        setAuthToken(res.data.token);
+        window.location.href = '/';
       })
       .catch(err => console.log(err))
   };
@@ -41,7 +42,7 @@ class Login extends Component {
         </div>
         <div id="InputWrapper">
           <input className="inputs" type="text" name="userInput" id="UsernameInput" placeholder="Username:" value={this.state.userInput} onChange={this.onChange}/>
-          <input className="inputs" type="text" name="passwordInput" id="PasswordInput" placeholder="Password:" value={this.state.passwordInput} onChange={this.onChange}/>
+          <input className="inputs" type="password" name="passwordInput" id="PasswordInput" placeholder="Password:" value={this.state.passwordInput} onChange={this.onChange}/>
           <button id="SubmitButton" onClick={this.onSubmit}>Log In</button>
         </div>
       </div>

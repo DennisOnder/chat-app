@@ -25,7 +25,6 @@ class Register extends Component {
       password: this.state.passwordInput
     };
     axios.post('/api/users/register', user)
-      .then(res => console.log(res.data))
       .catch(err => console.log(err))
   };
 
@@ -38,7 +37,7 @@ class Register extends Component {
         </div>
         <div id="InputWrapper">
           <input className="inputs" type="text" name="userInput" id="UsernameInput" placeholder="Username:" value={this.state.userInput} onChange={this.onChange}/>
-          <input className="inputs" type="text" name="passwordInput" id="PasswordInput" placeholder="Password:" value={this.state.passwordInput} onChange={this.onChange}/>
+          <input className="inputs" type="password" name="passwordInput" id="PasswordInput" placeholder="Password:" value={this.state.passwordInput} onChange={this.onChange}/>
           <button id="SubmitButton" onClick={this.onSubmit}>Register</button>
         </div>
       </div>

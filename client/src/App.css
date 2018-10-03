@@ -24,6 +24,91 @@
   font-weight: bold;
   cursor: pointer; }
 
+#MessageInputWrapper {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  background-color: #14213D;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+#MessageInputWrapper #MessageInput {
+  font-family: 'Montserrat';
+  text-align: center;
+  background: transparent;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  color: #FCA311;
+  font-size: 16px;
+  border-bottom: 1px solid #FCA311;
+  padding-bottom: 0.75em;
+  margin-right: 10px; }
+
+#MessageInputWrapper #MessageInput::placeholder {
+  text-align: center;
+  color: #FCA311 !important;
+  opacity: 1; }
+
+#MessageInputWrapper #MessageInput:-ms-input-placeholder {
+  text-align: center;
+  color: #FCA311 !important; }
+
+#MessageInputWrapper #MessageInput::-ms-input-placeholder {
+  text-align: center;
+  color: #FCA311 !important; }
+
+#MessageInputWrapper #MessageInput:focus::-moz-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#MessageInputWrapper #MessageInput:focus:-moz-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#MessageInputWrapper #MessageInput:focus::-webkit-input-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#MessageInputWrapper #MessageInput:focus::-ms-input-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent #FCA311 !important; }
+
+#MessageInputWrapper #MessageSubmitButton {
+  color: #001011;
+  background: #FCA311;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding: 0.75em 3em;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin-left: 10px; }
+
+#Output {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 15%;
+  display: flex;
+  flex-direction: column; }
+
+#Output div {
+  background-color: #FCA311;
+  margin-bottom: 5px; }
+
+#Output div p {
+  color: #001011;
+  font-weight: bold;
+  text-align: center; }
+
 .lds-ring {
   height: 100vh;
   width: 100%;

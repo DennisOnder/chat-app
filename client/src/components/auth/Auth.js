@@ -4,7 +4,9 @@ import '../../App.css';
 class Auth extends Component {
 
   componentDidMount = () => {
-    setTimeout(() => document.getElementById('Spinner').style.display = 'none', 3000);
+    setTimeout(() => {
+      document.getElementById('Spinner').style.display = 'none';
+    }, 2000);
   }
 
   redirectFromLandingPage(e) {

@@ -35,6 +35,93 @@ $white: #FFFFFF;
   }
 }
 
+#MessageInputWrapper {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  background-color: $gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  #MessageInput {
+    font-family: 'Montserrat';
+    text-align: center;
+    background: transparent;
+    outline: 0;
+    border: none;
+    box-shadow: none;
+    color: $yellow;
+    font-size: 16px;
+    border-bottom: 1px solid $yellow;
+    padding-bottom: 0.75em;
+    margin-right: 10px;
+    &::placeholder {
+      text-align: center;
+      color: $yellow !important;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      text-align: center;
+      color: $yellow !important;
+    }
+    &::-ms-input-placeholder {
+      text-align: center;
+      color: $yellow !important;
+    }
+    &:focus::-moz-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus:-moz-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus::-webkit-input-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus::-ms-input-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent $yellow !important;
+    }
+  }
+  #MessageSubmitButton {
+    color: $black;
+    background: $yellow;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 0.75em 3em;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+#Output {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  div {
+    background-color: $yellow;
+    margin-bottom: 5px;
+    p {
+      color: $black;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
 // Spinner
 .lds-ring {
   height: 100vh;
