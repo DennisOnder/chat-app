@@ -15,7 +15,7 @@ class Dashboard extends Component {
   };
 
   componentDidMount = () => {
-    this.fetchMessages();
+    setInterval(this.fetchMessages(), 5000);
   };
 
   fetchMessages() {
@@ -29,7 +29,9 @@ class Dashboard extends Component {
   }
 
   onSubmit() {
-    const newMessage = this.state.messageInput;
+    const newMessage = {
+      message: this.state.messageInput
+    };
     axios.defaults.headers.common['Authorization'] = localStorage.jwtToken;
     axios.post('/api/messages', newMessage)
       .catch(err => console.log(err));
