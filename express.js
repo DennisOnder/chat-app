@@ -24,8 +24,7 @@ require('./config/passport')(passport);
 // Test Route
 app.get('/test', (req, res) => {
   res.json({
-    username: 'Random Username',
-    message: 'Random Message'
+    Test: 'Success'
   });
 });
 

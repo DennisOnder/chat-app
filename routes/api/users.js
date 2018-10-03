@@ -54,6 +54,10 @@ router.post('/register', (req, res) => {
   }
 });
 
+
+// @route  POST api/users/login
+// @desc   Login
+// @access Public
 router.post('/login', (req, res) => {
   let errors = {};
   if(Validator.isEmpty(req.body.username)) {
