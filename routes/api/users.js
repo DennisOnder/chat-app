@@ -100,4 +100,16 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   });
 });
 
+// @route  GET api/users/:id
+// @desc   Find user by ID
+// @access Private
+router.get('/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json({
+      id: user._id,
+      username: user.username
+    }))
+    .catch(err => res.json(err));
+});
+
 module.exports = router;
