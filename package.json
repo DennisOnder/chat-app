@@ -6,7 +6,8 @@
   "scripts": {
     "install-dependencies": "npm run install && npm run install --prefix client",
     "server": "nodemon express.js",
-    "dev": "concurrently \"npm run server\" \"npm run start --prefix client\""
+    "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",
+    "dev-sass": "concurrently \"npm run server\" \"npm run dev --prefix client\""
   },
   "repository": {
     "type": "git",
