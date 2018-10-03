@@ -75,3 +75,71 @@ $white: #FFFFFF;
     transform: rotate(360deg);
   }
 }
+
+// Inputs
+#InputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .inputs {
+    font-family: 'Montserrat';
+    text-align: center;
+    background: transparent;
+    outline: 0;
+    border: none;
+    box-shadow: none;
+    color: $yellow;
+    font-size: 16px;
+    border-bottom: 1px solid $yellow;
+    padding-bottom: 0.75em;
+    margin-bottom: 25px;
+    &::placeholder {
+      text-align: center;
+      color: $yellow !important;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      text-align: center;
+      color: $yellow !important;
+    }
+    &::-ms-input-placeholder {
+      text-align: center;
+      color: $yellow !important;
+    }
+    &:focus::-moz-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus:-moz-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus::-webkit-input-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent !important;
+    }
+    &:focus::-ms-input-placeholder {
+      text-align: center;
+      transition: 0.1s !important;
+      color: transparent $yellow !important;
+    }
+  }
+  #SubmitButton {
+    color: $white;
+    background: $yellow;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding: 0.75em 3em;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    &:hover {
+      transition: 0.2s;
+      padding: 0.75em 5em;
+    }
+  }
+}

@@ -59,3 +59,69 @@
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+#InputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+#InputWrapper .inputs {
+  font-family: 'Montserrat';
+  text-align: center;
+  background: transparent;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+  color: #FCA311;
+  font-size: 16px;
+  border-bottom: 1px solid #FCA311;
+  padding-bottom: 0.75em;
+  margin-bottom: 25px; }
+
+#InputWrapper .inputs::placeholder {
+  text-align: center;
+  color: #FCA311 !important;
+  opacity: 1; }
+
+#InputWrapper .inputs:-ms-input-placeholder {
+  text-align: center;
+  color: #FCA311 !important; }
+
+#InputWrapper .inputs::-ms-input-placeholder {
+  text-align: center;
+  color: #FCA311 !important; }
+
+#InputWrapper .inputs:focus::-moz-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#InputWrapper .inputs:focus:-moz-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#InputWrapper .inputs:focus::-webkit-input-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent !important; }
+
+#InputWrapper .inputs:focus::-ms-input-placeholder {
+  text-align: center;
+  transition: 0.1s !important;
+  color: transparent #FCA311 !important; }
+
+#InputWrapper #SubmitButton {
+  color: #FFFFFF;
+  background: #FCA311;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  padding: 0.75em 3em;
+  border: 0;
+  outline: 0;
+  cursor: pointer; }
+
+#InputWrapper #SubmitButton:hover {
+  transition: 0.2s;
+  padding: 0.75em 5em; }
