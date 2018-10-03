@@ -4,6 +4,7 @@
   "description": "A simple chat application made with the MERN stack.",
   "main": "express.js",
   "scripts": {
+    "install-dependencies": "npm run install && npm run install --prefix client",
     "server": "nodemon express.js",
     "dev": "concurrently \"npm run server\" \"npm run start --prefix client\""
   },
