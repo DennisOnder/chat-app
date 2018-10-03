@@ -4,8 +4,9 @@ const port = process.env.PORT || 8000;
 const db = require('mongoose');
 const key = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
-const users = require('./routes/api/users');
 const passport = require('passport');
+const users = require('./routes/api/users');
+const messages = require('./routes/api/messages');
 
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -30,5 +31,6 @@ app.get('/test', (req, res) => {
 
 // Routes
 app.use('/api/users', users);
+app.use('/api/messages', messages);
 
 app.listen(port, () => console.log(`Server running on port: ${port}.`));
