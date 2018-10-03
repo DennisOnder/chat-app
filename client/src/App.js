@@ -4,6 +4,7 @@ import Auth from './components/auth/Auth';
 import setAuthToken from './utils/setAuthToken';
 import jwt_decode from 'jwt-decode';
 import Login from './components/login/Login';
+import Register from './components/register/Register';
 
 class App extends Component {
 
@@ -34,6 +35,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Auth}/>
           <Route exact path="/login" component={Login}/>
+          <Route exact path="/register" component={Register}/>
         </div>
       </Router>
     );
